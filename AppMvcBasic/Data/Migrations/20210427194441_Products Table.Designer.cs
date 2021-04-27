@@ -4,14 +4,16 @@ using AppMvcBasic.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AppMvcBasic.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210427194441_Products Table")]
+    partial class ProductsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,7 +84,8 @@ namespace AppMvcBasic.Data.Migrations
 
                     b.Property<Guid>("ProviderId");
 
-                    b.Property<decimal>("Value");
+                    b.Property<decimal>("Value")
+                        .HasMaxLength(10);
 
                     b.HasKey("Id");
 

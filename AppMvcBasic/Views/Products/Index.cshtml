@@ -1,28 +1,31 @@
-﻿@model IEnumerable<AppMvcBasic.Models.Provider>
+﻿@model IEnumerable<AppMvcBasic.Models.Product>
 
 @{
-    ViewData["Title"] = "Providers List";
+    ViewData["Title"] = "Products List";
 }
 
 <h1>@ViewData["Title"]</h1>
 
 <p>
-    <a class="btn btn-dark" asp-action="Create">Create New</a>
+    <a class="btn btn-info" asp-action="Create">Create new product</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Document)
+                @Html.DisplayNameFor(model => model.Value)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TypeProvider)
+                @Html.DisplayNameFor(model => model.DateRegister)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Provider)
             </th>
             <th></th>
         </tr>
@@ -34,13 +37,16 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Document)
+                @Html.DisplayFor(modelItem => item.Value)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TypeProvider)
+                @Html.DisplayFor(modelItem => item.DateRegister)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Provider.Name)
             </td>
             <td class="text-right">
                 <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
