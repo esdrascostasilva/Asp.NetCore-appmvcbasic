@@ -12,7 +12,7 @@ namespace AppMvcBasic.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "The field {0} is required.")]
-        [StringLength(11, ErrorMessage = "The field {0} need contain between {2} and {1} characters.", MinimumLength = 14)]
+        [StringLength(14, ErrorMessage = "The field {0} need contain between {2} and {1} characters.", MinimumLength = 11)]
         public string Document { get; set; }
 
         public TypeProvider TypeProvider { get; set; }
